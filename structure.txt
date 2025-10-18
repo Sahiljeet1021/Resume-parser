@@ -1,0 +1,4 @@
+field to put my JD
+upload pdf 
+PDF to image--> processing-->Google gemini processing
+prompts template[multiple templates]
