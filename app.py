@@ -262,7 +262,7 @@ with col_b:
 
 # Prompts
 input_prompt1 = """
-You are an experienced Technical Human Resource Manager. Your task is to review the provided resume against the job description. 
+You are an experienced ATS (Applicant Tracking System). Your task is to review the provided resume against the job description. 
 Please share your professional evaluation on whether the candidate's profile aligns with the role. 
 Highlight the strengths and weaknesses of the applicant in relation to the specified job requirements.
 """
