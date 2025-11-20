@@ -40,7 +40,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for styling
+# Custom CSS for styling with improved text visibility
 st.markdown("""
     <style>
     .main {
@@ -49,6 +49,17 @@ st.markdown("""
     .stApp {
         background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
+    
+    /* Fix text color for all elements */
+    .stMarkdown, .stTextArea label, .stFileUploader label, p, span, div {
+        color: #2d3748 !important;
+    }
+    
+    /* Header styling */
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+        color: #1a202c !important;
+    }
+    
     .big-title {
         font-size: 3.5rem;
         font-weight: 800;
@@ -62,9 +73,12 @@ st.markdown("""
     .subtitle {
         text-align: center;
         font-size: 1.2rem;
-        color: #4a5568;
+        color: #4a5568 !important;
         margin-bottom: 2rem;
+        font-weight: 500;
     }
+    
+    /* Upload section styling */
     .upload-section {
         background: white;
         padding: 2rem;
@@ -72,9 +86,42 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         margin: 1rem 0;
     }
+    
+    .upload-section h3 {
+        color: #2d3748 !important;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    /* Text area styling */
+    .stTextArea textarea {
+        background-color: #f7fafc !important;
+        color: #2d3748 !important;
+        border: 2px solid #e2e8f0 !important;
+        border-radius: 8px !important;
+        font-size: 1rem !important;
+    }
+    
+    .stTextArea textarea::placeholder {
+        color: #a0aec0 !important;
+    }
+    
+    /* File uploader styling */
+    .stFileUploader {
+        background-color: #f7fafc;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 2px dashed #cbd5e0;
+    }
+    
+    .stFileUploader label {
+        color: #2d3748 !important;
+        font-weight: 600 !important;
+    }
+    
     .success-message {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+        color: white !important;
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
@@ -82,6 +129,7 @@ st.markdown("""
         margin: 1rem 0;
         animation: slideIn 0.5s ease-out;
     }
+    
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(-20px); }
         to { opacity: 1; transform: translateY(0); }
@@ -90,11 +138,13 @@ st.markdown("""
         from { transform: translateX(-100%); }
         to { transform: translateX(0); }
     }
+    
+    /* Button styling */
     .stButton > button {
         width: 100%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        border: none !important;
         padding: 0.75rem 2rem;
         font-size: 1.1rem;
         font-weight: 600;
@@ -106,6 +156,8 @@ st.markdown("""
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
     }
+    
+    /* Info card styling */
     .info-card {
         background: white;
         padding: 1.5rem;
@@ -113,9 +165,42 @@ st.markdown("""
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         margin: 1rem 0;
     }
-    .icon-text {
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
+    
+    .info-card h4 {
+        color: #2d3748 !important;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .info-card p {
+        color: #4a5568 !important;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Response text styling */
+    .element-container p {
+        color: #2d3748 !important;
+    }
+    
+    /* Spinner text */
+    .stSpinner > div {
+        color: #667eea !important;
+    }
+    
+    /* Error message */
+    .stAlert {
+        background-color: #fff5f5 !important;
+        color: #c53030 !important;
+        border-left: 4px solid #fc8181 !important;
+    }
+    
+    /* Horizontal rule */
+    hr {
+        margin: 2rem 0;
+        border: none;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #cbd5e0, transparent);
     }
     </style>
 """, unsafe_allow_html=True)
