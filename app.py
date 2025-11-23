@@ -230,7 +230,7 @@ with col2:
     uploaded_file = st.file_uploader(
         "",
         type=["pdf"],
-        help="Upload your resume in PDF format"
+        help="Upload your 1 page resume in PDF format"
     )
     
     if uploaded_file is not None:
